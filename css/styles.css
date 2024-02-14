@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #f3316f;
+}
+
+body,
+html {
+    height: 100%;
+    background: #f6f6f6;
+}
+
+.main {
+    transition: margin-left 0.3s ease;
+}
+
+.navigation.show-menu+.main {
+    margin-left: 300px;
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: var(--color-primary);
+    min-width: 300px;
+    max-width: 300px;
+    height: 100vh;
+    overflow: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 999;
+}
+
+.navigation.show-menu {
+    transform: translateX(0);
+}
+
+.navigation ul {
+    list-style: none;
+}
+
+.navigation ul li {
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+}
+
+
+.navigation ul li:nth-child(2) {
+    margin-top: 3rem;
+}
+
+
+.navigation ul li:nth-child(n+3) {
+    margin-top: 0.5rem;
+}
+
+
+.navigation ul li:not(:first-child):hover {
+    background: white;
+    border-radius: 50px 0 0 50px;
+}
+
+.navigation ul li:not(:first-child):hover a,
+.navigation ul li:not(:first-child):hover .icon {
+    color: black;
+}
+
+
+.navigation a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.icon {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+
+.title1 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 1rem;
+}
+
+
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 4rem;
+    width: calc(100% - 300px);
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    position: absolute;
+    left: 300px;
+    transition: left 0.3s ease;
+}
+
+.topbar.show-menu {
+    left: 0;
+    width: 100%;
+}
+
+
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toggle ion-icon {
+    cursor: pointer;
+}
+
+.user {
+    position: relative;
+    right: 0;
+    display: flex;
+}
+
+.user img {
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    align-self: center;
+    margin: 0 auto;
+    margin-right: 1rem;
+}
+
+.user-infos {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    transition: left 0.3s ease; 
+}
+
+.content.collapsed {
+    height: 50vh;
+    left: 0; 
+    transition: height 0.3s, left 0.3s ease; 
+}
+
+.content.expanded {
+    height: calc(100% - 4rem);
+    transition: height 0.3s, left 0.3s ease; 
+}
+
+.sort-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.asc .sort-icon {
+    border-bottom: 5px solid;
+}
+
+.desc .sort-icon {
+    border-top: 5px solid;
+}
+
+.card {
+    position: absolute;
+    top: 10%;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    transition: left 0.3s ease; 
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;    
+    height: 35%;
+    display: none;
+}
+
+.card-content {
+    text-align: center;
+    flex-direction: column;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}
+
+
+.card-content p{
+    font-size: 4rem;    
+}
+
+.card.expanded {
+    left: 0;
+}
+
+.visible{
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem; 
+    text-align:justify;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold; 
+    cursor: pointer;
+    text-align: start;
+}
+  
+
+@media screen and (max-width: 768px) {
+    .navigation {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+  
+    .main {
+      margin-left: 0;
+      transition: margin-left 0.3s ease;
+    }
+  
+    .topbar {
+      left: 0;
+      transition: left 0.3s ease;
+      width: 100%;
+    }
+  
+    .content {
+      left: 0;
+      transition: left 0.3s ease;
+    }
+  
+    .card {
+      left: 0;
+      width: 100%;
+      transition: left 0.3s ease;
+    }
+  
+    .navigation.show-menu {
+      transform: translateX(0);
+    }
+  }
+  
+  
+  
+
+

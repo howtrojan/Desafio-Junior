@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Financeiro</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="container">
+    <div class="navigation show-menu">
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="home"></ion-icon>
+            </span>
+            <span class="title1">Sistema Financeiro</span>
+          </a>
+        </li>
+
+        <li data-card-id="valor-total-notas-card">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </span>
+            <span class="title">Valor total das notas emitidas.</span>
+          </a>
+        </li>
+        
+        <li data-card-id="notas-sem-cobranca-card">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </span>
+            <span class="title">Valor total das notas emitidas, mas sem ter a cobrança feita</span>
+          </a>
+        </li>
+        
+        <li data-card-id="notas-vencidas-card">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </span>
+            <span class="title">Valor total das notas vencidas - Inadimplência</span>
+          </a>
+        </li>
+        
+        <li data-card-id="notas-a-vencer-card">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </span>
+            <span class="title">Valor total das notas a vencer</span>
+          </a>
+        </li>
+        
+        <li data-card-id="notas-pagas-card">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </span>
+            <span class="title">Valor total das notas pagas</span>
+          </a>
+        </li>
+        
+        <li data-card-id="grafico-inadimplencia-card">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </span>
+            <span class="title">Gráfico de evolução da inadimplência mês a mês</span>
+          </a>
+        </li>
+        
+        <li data-card-id="grafico-receita-card">
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </span>
+            <span class="title">Gráfico de evolução da receita recebida mês a mês</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+    <!-- ========================= Main ==================== -->
+    <div class="main">
+      <div class="topbar">
+        <div class="toggle">
+          <ion-icon name="menu-outline" id="menu-icon"></ion-icon>
+          <div>
+            <h3>Dashboard</h2>
+          </div>
+        </div>
+
+        <div class="user">
+          <img src="https://avatars.githubusercontent.com/u/147101575?v=4" alt="">
+          <div class="user-infos">
+            <span>André Braga</span>
+            <span>Admin</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card" id="valor-total-notas-card">
+      <div class="card-content">
+        <h2>Valor Total das Notas Emitidas</h2>
+        <p id="valor-total-notas">Carregando...</p>
+      </div>
+    </div>
+
+
+    <div class="card" id="notas-sem-cobranca-card">
+      <div class="card-content">
+        <h2>Valor Total das Notas Emitidas sem Cobrança</h2>
+        <p id="valor-total-notas-sem-cobranca">Carregando...</p>
+      </div>
+    </div>
+
+
+    <div class="card" id="notas-vencidas-card">
+      <div class="card-content">
+        <h2>Valor Total das Notas Vencidas - Inadimplência</h2>
+        <p id="valor-total-notas-vencidas">Carregando...</p>
+      </div>
+    </div>
+
+
+    <div class="card" id="notas-a-vencer-card">
+      <div class="card-content">
+        <h2>Valor Total das Notas a Vencer</h2>
+        <p id="valor-total-notas-a-vencer">Carregando...</p>
+      </div>
+    </div>
+
+
+    <div class="card" id="notas-pagas-card">
+      <div class="card-content">
+        <h2>Valor Total das Notas Pagas</h2>
+        <p id="valor-total-notas-pagas">Carregando...</p>
+      </div>
+    </div>
+
+
+    <div class="card" id="grafico-inadimplencia-card">
+      <div class="card-content">
+        <h2>Gráfico de Evolução da Inadimplência Mês a Mês</h2>
+        <canvas id="grafico-inadimplencia"></canvas>
+      </div>
+    </div>
+    
+    <div class="card" id="grafico-receita-card">
+      <div class="card-content">
+        <h2>Gráfico de Evolução da Receita Recebida Mês a Mês</h2>
+        <canvas id="grafico-receita"></canvas>
+      </div>
+    </div>
+    
+
+
+
+    <div class="content">
+      <table id="myTable">
+        <thead>
+          <tr>
+            <th class="sortable">Nome do pagador<span class="sort-icon"></span></th>
+            <th class="sortable">Número de identificação da nota<span class="sort-icon"></span></th>
+            <th class="sortable">Data de emissão da nota<span class="sort-icon"></span></th>
+            <th class="sortable">Data da cobrança<span class="sort-icon"></span></th>
+            <th class="sortable">Data do pagamento<span class="sort-icon"></span></th>
+            <th class="sortable">Valor da nota<span class="sort-icon"></span></th>
+            <th class="sortable">Documento da nota fiscal<span class="sort-icon"></span></th>
+            <th class="sortable">Documento do boleto bancário<span class="sort-icon"></span></th>
+            <th class="sortable">Status da nota<span class="sort-icon"></span></th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- =========== Scripts =========  -->
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/api.js"></script>
+  <script src="./scripts/cards.js"></script>
+  <script src="./scripts/criargraficos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <!-- ====== ionicons ======= -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
