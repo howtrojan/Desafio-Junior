@@ -2,6 +2,10 @@
 
 Este é um projeto de sistema financeiro desenvolvido como parte de um teste técnico para uma vaga de Frontend Júnior. O objetivo do projeto é criar uma página web para visualização de dados de notas fiscais emitidas, indicadores financeiros e gráficos de evolução.
 
+## Preview do projeto 
+
+https://teste-tecnico-jr-front-end.vercel.app/
+
 ## Tecnologias Utilizadas
 
 - HTML
