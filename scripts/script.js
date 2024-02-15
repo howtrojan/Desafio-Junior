@@ -29,8 +29,7 @@ function fecharMenuEmTelasPequenas() {
     topbar.classList.toggle("show-menu");
 
     const content = document.querySelector(".content");
-    content.classList.toggle("expanded");
-    content.classList.toggle("collapsed");
+    content.classList.toggle("expanded");    
 
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
@@ -51,8 +50,7 @@ function fecharMenuAoClicarFora(event) {
     topbar.classList.toggle("show-menu");
 
     const content = document.querySelector(".content");
-    content.classList.toggle("expanded");
-    content.classList.toggle("collapsed");
+    content.classList.toggle("expanded");    
 
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
