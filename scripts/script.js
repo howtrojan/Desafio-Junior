@@ -60,3 +60,6 @@ function fecharMenuAoClicarFora(event) {
 }
 
 document.addEventListener("click", fecharMenuAoClicarFora);
+
+
+
